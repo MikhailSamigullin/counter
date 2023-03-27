@@ -1,26 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div v-for="n in countersNumber" :key="n">
+    <CounterComponent />
+  </div>
+  <AddCounterComponent @click="addNewCounter" />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import CounterComponent from "./components/CounterComponent.vue";
+import AddCounterComponent from "./components/AddCounterComponent.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      countersNumber: 1,
+    };
+  },
+  methods: {
+    addNewCounter() {
+      this.countersNumber += 1;
+    },
+  },
   components: {
-    HelloWorld,
+    CounterComponent,
+    AddCounterComponent,
   },
 };
 </script>
 
 <style>
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  padding: 50px 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #353638;
 }
 </style>
