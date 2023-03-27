@@ -1,4 +1,7 @@
 # Test project - Counter on Vue
+## Ссылка на Netlify
+https://ephemeral-eclair-664ac7.netlify.app
+
 #### Links:
 https://docs.google.com/document/d/17WEh-ILvUb8qeT3bdvFQPMuT81EPX85OGGg5M_Q1-uk/edit
 
